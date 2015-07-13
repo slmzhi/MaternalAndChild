@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  InteractionViewController.h
 //  MaternalAndChild
 //
 //  Created by 陈奕涛 on 15/7/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface InteractionViewController : UIViewController
 
 @end
-

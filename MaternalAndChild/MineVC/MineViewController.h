@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  MineViewController.h
 //  MaternalAndChild
 //
 //  Created by 陈奕涛 on 15/7/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
+@interface MineViewController : UIViewController
 
 @end
-
