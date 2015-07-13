@@ -9,12 +9,20 @@
 /* Begin PBXBuildFile section */
 		2FF2FD771B5381FB00200059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD761B5381FB00200059 /* main.m */; };
 		2FF2FD7A1B5381FB00200059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD791B5381FB00200059 /* AppDelegate.m */; };
-		2FF2FD7D1B5381FB00200059 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD7C1B5381FB00200059 /* FirstViewController.m */; };
-		2FF2FD801B5381FB00200059 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD7F1B5381FB00200059 /* SecondViewController.m */; };
-		2FF2FD831B5381FB00200059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2FF2FD811B5381FB00200059 /* Main.storyboard */; };
 		2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF2FD841B5381FB00200059 /* Images.xcassets */; };
 		2FF2FD881B5381FB00200059 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FF2FD861B5381FB00200059 /* LaunchScreen.xib */; };
 		2FF2FD941B5381FB00200059 /* MaternalAndChildTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD931B5381FB00200059 /* MaternalAndChildTests.m */; };
+		2FF2FDA31B5382D600200059 /* DiscoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDA11B5382D600200059 /* DiscoverViewController.m */; };
+		2FF2FDAD1B5382F000200059 /* Base64.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDA61B5382F000200059 /* Base64.mm */; };
+		2FF2FDAE1B5382F000200059 /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDA71B5382F000200059 /* GTMBase64.m */; };
+		2FF2FDAF1B5382F000200059 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDA81B5382F000200059 /* NSData+Base64.m */; };
+		2FF2FDB21B53830100200059 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDB01B53830100200059 /* RootViewController.m */; };
+		2FF2FDB61B5389AC00200059 /* icon_guanbi.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FF2FDB51B5389AC00200059 /* icon_guanbi.png */; };
+		2FF2FDBB1B538D0800200059 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDBA1B538D0800200059 /* FriendsViewController.m */; };
+		2FF2FDBF1B538EB100200059 /* MerchantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDBE1B538EB100200059 /* MerchantViewController.m */; };
+		2FF2FDC31B538FE300200059 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDC21B538FE300200059 /* MineViewController.m */; };
+		2FF2FDC71B5394A300200059 /* InteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FDC61B5394A300200059 /* InteractionViewController.m */; };
+		A1C985A51AF185ABF2ADC279 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D2556EC2441800B087C837E /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +36,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		13D03AC64AE74AEFCF5726FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2FF2FD711B5381FB00200059 /* MaternalAndChild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaternalAndChild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF2FD751B5381FB00200059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FF2FD761B5381FB00200059 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2FF2FD781B5381FB00200059 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2FF2FD791B5381FB00200059 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2FF2FD7B1B5381FB00200059 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		2FF2FD7C1B5381FB00200059 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		2FF2FD7E1B5381FB00200059 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		2FF2FD7F1B5381FB00200059 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
-		2FF2FD821B5381FB00200059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2FF2FD841B5381FB00200059 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2FF2FD871B5381FB00200059 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		2FF2FD8D1B5381FB00200059 /* MaternalAndChildTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MaternalAndChildTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF2FD921B5381FB00200059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FF2FD931B5381FB00200059 /* MaternalAndChildTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MaternalAndChildTests.m; sourceTree = "<group>"; };
+		2FF2FDA11B5382D600200059 /* DiscoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscoverViewController.m; path = DiscoverVC/DiscoverViewController.m; sourceTree = "<group>"; };
+		2FF2FDA21B5382D600200059 /* DiscoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscoverViewController.h; path = DiscoverVC/DiscoverViewController.h; sourceTree = "<group>"; };
+		2FF2FDA61B5382F000200059 /* Base64.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Base64.mm; path = Tool/Base64/Base64.mm; sourceTree = "<group>"; };
+		2FF2FDA71B5382F000200059 /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GTMBase64.m; path = Tool/Base64/GTMBase64.m; sourceTree = "<group>"; };
+		2FF2FDA81B5382F000200059 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSData+Base64.m"; path = "Tool/Base64/NSData+Base64.m"; sourceTree = "<group>"; };
+		2FF2FDA91B5382F000200059 /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = Tool/Base64/Base64.h; sourceTree = "<group>"; };
+		2FF2FDAA1B5382F000200059 /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMBase64.h; path = Tool/Base64/GTMBase64.h; sourceTree = "<group>"; };
+		2FF2FDAB1B5382F000200059 /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GTMDefines.h; path = Tool/Base64/GTMDefines.h; sourceTree = "<group>"; };
+		2FF2FDAC1B5382F000200059 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSData+Base64.h"; path = "Tool/Base64/NSData+Base64.h"; sourceTree = "<group>"; };
+		2FF2FDB01B53830100200059 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		2FF2FDB11B53830100200059 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		2FF2FDB51B5389AC00200059 /* icon_guanbi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon_guanbi.png; path = Resource/Image/icon_guanbi.png; sourceTree = "<group>"; };
+		2FF2FDB91B538D0800200059 /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendsViewController.h; path = FriendsVC/FriendsViewController.h; sourceTree = "<group>"; };
+		2FF2FDBA1B538D0800200059 /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendsViewController.m; path = FriendsVC/FriendsViewController.m; sourceTree = "<group>"; };
+		2FF2FDBD1B538EB100200059 /* MerchantViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MerchantViewController.h; path = MerchantVC/MerchantViewController.h; sourceTree = "<group>"; };
+		2FF2FDBE1B538EB100200059 /* MerchantViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MerchantViewController.m; path = MerchantVC/MerchantViewController.m; sourceTree = "<group>"; };
+		2FF2FDC11B538FE300200059 /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = MineVC/MineViewController.h; sourceTree = "<group>"; };
+		2FF2FDC21B538FE300200059 /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = MineVC/MineViewController.m; sourceTree = "<group>"; };
+		2FF2FDC51B5394A300200059 /* InteractionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InteractionViewController.h; path = InteractionVC/InteractionViewController.h; sourceTree = "<group>"; };
+		2FF2FDC61B5394A300200059 /* InteractionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InteractionViewController.m; path = InteractionVC/InteractionViewController.m; sourceTree = "<group>"; };
+		2FF2FDC81B539B8E00200059 /* Header.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.pch; sourceTree = "<group>"; };
+		7D2556EC2441800B087C837E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4A1B6B175A1C44F29346407 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1C985A51AF185ABF2ADC279 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +97,8 @@
 				2FF2FD731B5381FB00200059 /* MaternalAndChild */,
 				2FF2FD901B5381FB00200059 /* MaternalAndChildTests */,
 				2FF2FD721B5381FB00200059 /* Products */,
+				4BE0853A40CE5FD7E806E172 /* Pods */,
+				E11D09F921B585DDE76DFCF8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,16 +114,19 @@
 		2FF2FD731B5381FB00200059 /* MaternalAndChild */ = {
 			isa = PBXGroup;
 			children = (
+				2FF2FDA01B5382C100200059 /* DiscoverVC */,
+				2FF2FDB81B538CDB00200059 /* FriendsVC */,
+				2FF2FDC41B53948000200059 /* InteractionVC */,
+				2FF2FDBC1B538E8F00200059 /* MerchantVC */,
+				2FF2FDC01B538FB300200059 /* MineVC */,
+				2FF2FDA41B5382DA00200059 /* Tool */,
 				2FF2FD781B5381FB00200059 /* AppDelegate.h */,
 				2FF2FD791B5381FB00200059 /* AppDelegate.m */,
-				2FF2FD7B1B5381FB00200059 /* FirstViewController.h */,
-				2FF2FD7C1B5381FB00200059 /* FirstViewController.m */,
-				2FF2FD7E1B5381FB00200059 /* SecondViewController.h */,
-				2FF2FD7F1B5381FB00200059 /* SecondViewController.m */,
-				2FF2FD811B5381FB00200059 /* Main.storyboard */,
+				2FF2FDB11B53830100200059 /* RootViewController.h */,
+				2FF2FDB01B53830100200059 /* RootViewController.m */,
+				2FF2FD741B5381FB00200059 /* Supporting Files */,
 				2FF2FD841B5381FB00200059 /* Images.xcassets */,
 				2FF2FD861B5381FB00200059 /* LaunchScreen.xib */,
-				2FF2FD741B5381FB00200059 /* Supporting Files */,
 			);
 			path = MaternalAndChild;
 			sourceTree = "<group>";
@@ -101,8 +134,10 @@
 		2FF2FD741B5381FB00200059 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2FF2FDB31B53898900200059 /* Resource */,
 				2FF2FD751B5381FB00200059 /* Info.plist */,
 				2FF2FD761B5381FB00200059 /* main.m */,
+				2FF2FDC81B539B8E00200059 /* Header.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -124,6 +159,106 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		2FF2FDA01B5382C100200059 /* DiscoverVC */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDA21B5382D600200059 /* DiscoverViewController.h */,
+				2FF2FDA11B5382D600200059 /* DiscoverViewController.m */,
+			);
+			name = DiscoverVC;
+			sourceTree = "<group>";
+		};
+		2FF2FDA41B5382DA00200059 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDA51B5382DF00200059 /* Base64 */,
+			);
+			name = Tool;
+			sourceTree = "<group>";
+		};
+		2FF2FDA51B5382DF00200059 /* Base64 */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDA61B5382F000200059 /* Base64.mm */,
+				2FF2FDA71B5382F000200059 /* GTMBase64.m */,
+				2FF2FDA81B5382F000200059 /* NSData+Base64.m */,
+				2FF2FDA91B5382F000200059 /* Base64.h */,
+				2FF2FDAA1B5382F000200059 /* GTMBase64.h */,
+				2FF2FDAB1B5382F000200059 /* GTMDefines.h */,
+				2FF2FDAC1B5382F000200059 /* NSData+Base64.h */,
+			);
+			name = Base64;
+			sourceTree = "<group>";
+		};
+		2FF2FDB31B53898900200059 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDB41B5389A200200059 /* Image */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		2FF2FDB41B5389A200200059 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDB51B5389AC00200059 /* icon_guanbi.png */,
+			);
+			name = Image;
+			sourceTree = "<group>";
+		};
+		2FF2FDB81B538CDB00200059 /* FriendsVC */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDB91B538D0800200059 /* FriendsViewController.h */,
+				2FF2FDBA1B538D0800200059 /* FriendsViewController.m */,
+			);
+			name = FriendsVC;
+			sourceTree = "<group>";
+		};
+		2FF2FDBC1B538E8F00200059 /* MerchantVC */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDBD1B538EB100200059 /* MerchantViewController.h */,
+				2FF2FDBE1B538EB100200059 /* MerchantViewController.m */,
+			);
+			name = MerchantVC;
+			sourceTree = "<group>";
+		};
+		2FF2FDC01B538FB300200059 /* MineVC */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDC11B538FE300200059 /* MineViewController.h */,
+				2FF2FDC21B538FE300200059 /* MineViewController.m */,
+			);
+			name = MineVC;
+			sourceTree = "<group>";
+		};
+		2FF2FDC41B53948000200059 /* InteractionVC */ = {
+			isa = PBXGroup;
+			children = (
+				2FF2FDC51B5394A300200059 /* InteractionViewController.h */,
+				2FF2FDC61B5394A300200059 /* InteractionViewController.m */,
+			);
+			name = InteractionVC;
+			sourceTree = "<group>";
+		};
+		4BE0853A40CE5FD7E806E172 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13D03AC64AE74AEFCF5726FA /* Pods.debug.xcconfig */,
+				D4A1B6B175A1C44F29346407 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E11D09F921B585DDE76DFCF8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D2556EC2441800B087C837E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -131,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2FF2FD971B5381FB00200059 /* Build configuration list for PBXNativeTarget "MaternalAndChild" */;
 			buildPhases = (
+				1092298A84D314C7BF0B5F3C /* Check Pods Manifest.lock */,
 				2FF2FD6D1B5381FB00200059 /* Sources */,
 				2FF2FD6E1B5381FB00200059 /* Frameworks */,
 				2FF2FD6F1B5381FB00200059 /* Resources */,
+				940F01C77FF10A8D171D5F1A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -204,9 +341,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FF2FD831B5381FB00200059 /* Main.storyboard in Resources */,
 				2FF2FD881B5381FB00200059 /* LaunchScreen.xib in Resources */,
 				2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */,
+				2FF2FDB61B5389AC00200059 /* icon_guanbi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,15 +356,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1092298A84D314C7BF0B5F3C /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		940F01C77FF10A8D171D5F1A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2FF2FD6D1B5381FB00200059 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FF2FD801B5381FB00200059 /* SecondViewController.m in Sources */,
 				2FF2FD7A1B5381FB00200059 /* AppDelegate.m in Sources */,
-				2FF2FD7D1B5381FB00200059 /* FirstViewController.m in Sources */,
+				2FF2FDB21B53830100200059 /* RootViewController.m in Sources */,
+				2FF2FDA31B5382D600200059 /* DiscoverViewController.m in Sources */,
+				2FF2FDAE1B5382F000200059 /* GTMBase64.m in Sources */,
+				2FF2FDBB1B538D0800200059 /* FriendsViewController.m in Sources */,
+				2FF2FDBF1B538EB100200059 /* MerchantViewController.m in Sources */,
+				2FF2FDAD1B5382F000200059 /* Base64.mm in Sources */,
+				2FF2FDC31B538FE300200059 /* MineViewController.m in Sources */,
 				2FF2FD771B5381FB00200059 /* main.m in Sources */,
+				2FF2FDAF1B5382F000200059 /* NSData+Base64.m in Sources */,
+				2FF2FDC71B5394A300200059 /* InteractionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,14 +427,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2FF2FD811B5381FB00200059 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2FF2FD821B5381FB00200059 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2FF2FD861B5381FB00200059 /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -351,9 +520,12 @@
 		};
 		2FF2FD981B5381FB00200059 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D03AC64AE74AEFCF5726FA /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = MaternalAndChild/Header.pch;
 				INFOPLIST_FILE = MaternalAndChild/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -361,9 +533,12 @@
 		};
 		2FF2FD991B5381FB00200059 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D4A1B6B175A1C44F29346407 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PREFIX_HEADER = MaternalAndChild/Header.pch;
 				INFOPLIST_FILE = MaternalAndChild/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -422,6 +597,7 @@
 				2FF2FD991B5381FB00200059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2FF2FD9A1B5381FB00200059 /* Build configuration list for PBXNativeTarget "MaternalAndChildTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +606,7 @@
 				2FF2FD9C1B5381FB00200059 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

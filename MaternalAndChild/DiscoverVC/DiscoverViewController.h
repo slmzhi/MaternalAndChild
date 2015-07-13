@@ -10,4 +10,7 @@
 
 @interface DiscoverViewController : UIViewController
 
+@property (nonatomic, strong) UIImageView* banner;
+@property (nonatomic, strong) UIImageView* headerProtrait;
+
 @end

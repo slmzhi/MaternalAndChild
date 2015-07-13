@@ -7,16 +7,30 @@
 //
 
 #import "AppDelegate.h"
+#import "RootViewController.h"
+#import "sys/utsname.h"
 
 @interface AppDelegate ()
 
 @end
 
-@implementation AppDelegate
+@implementation AppDelegate {
+    RootViewController* rootViewController;
+}
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    [self deviceVersion];
+
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    rootViewController = [[RootViewController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:rootViewController];
+    self.window.rootViewController = nav;
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
@@ -40,6 +54,27 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - userMethod
+- (void)deviceVersion {
+    NSString* sDevice = [[NSUserDefaults standardUserDefaults] objectForKey:@"CurrentDevicesType"];
+    if (sDevice) {
+        if ([sDevice isEqualToString:@"iPhone7,1"]) {
+            self.tabbarHeight = 147/2.0;
+        } else {
+            self.tabbarHeight = 98/2.0;
+        }
+
+        return;
+    } else {
+        struct utsname systemInfo;
+        uname(&systemInfo);
+        NSString *deviceString = [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+        [[NSUserDefaults standardUserDefaults] setValue:deviceString forKey:@"CurrentDevicesType"];
+        [self deviceVersion];
+    }
+
 }
 
 @end
