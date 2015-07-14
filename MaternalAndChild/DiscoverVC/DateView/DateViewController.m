@@ -16,14 +16,12 @@
     UITableView* table;
     UIButton* hideThisViewBtn;
     NSArray* data;
-    MASConstraint* constraint;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.userInteractionEnabled = YES;
-//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
 
     [self initTableView];
     [self initHideThisViewAction];
@@ -40,9 +38,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self showHideThisView:YES];
-    });
+    [self showHideThisView:YES];
 
 }
 
