@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DiscoverViewController : UIViewController
+@interface DiscoverViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UIImageView* banner;
 @property (nonatomic, strong) UIImageView* headerProtrait;

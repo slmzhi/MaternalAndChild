@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F9E08DC1B54B78300841964 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08DB1B54B78300841964 /* line@2x.png */; };
+		2F9E08DE1B54E31D00841964 /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08DD1B54E31D00841964 /* time@2x.png */; };
 		2FF2FD771B5381FB00200059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD761B5381FB00200059 /* main.m */; };
 		2FF2FD7A1B5381FB00200059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD791B5381FB00200059 /* AppDelegate.m */; };
 		2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF2FD841B5381FB00200059 /* Images.xcassets */; };
@@ -37,6 +39,8 @@
 
 /* Begin PBXFileReference section */
 		13D03AC64AE74AEFCF5726FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		2F9E08DB1B54B78300841964 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Resource/Image/line@2x.png"; sourceTree = "<group>"; };
+		2F9E08DD1B54E31D00841964 /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "time@2x.png"; path = "Resource/Image/time@2x.png"; sourceTree = "<group>"; };
 		2FF2FD711B5381FB00200059 /* MaternalAndChild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaternalAndChild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF2FD751B5381FB00200059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FF2FD761B5381FB00200059 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 		2FF2FDB41B5389A200200059 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				2F9E08DD1B54E31D00841964 /* time@2x.png */,
+				2F9E08DB1B54B78300841964 /* line@2x.png */,
 				2FF2FDB51B5389AC00200059 /* icon_guanbi.png */,
 			);
 			name = Image;
@@ -342,7 +348,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF2FD881B5381FB00200059 /* LaunchScreen.xib in Resources */,
+				2F9E08DE1B54E31D00841964 /* time@2x.png in Resources */,
 				2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */,
+				2F9E08DC1B54B78300841964 /* line@2x.png in Resources */,
 				2FF2FDB61B5389AC00200059 /* icon_guanbi.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,7 +18,7 @@
     RootViewController* rootViewController;
 }
 
-
+#pragma mark - sysMethod
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
 
