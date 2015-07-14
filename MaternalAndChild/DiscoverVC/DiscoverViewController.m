@@ -133,7 +133,7 @@
         cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setBackgroundColor:[UIColor clearColor]];
             cell.userInteractionEnabled = YES;
             
@@ -146,7 +146,7 @@
         cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setBackgroundColor:[UIColor clearColor]];
             cell.userInteractionEnabled = YES;
 
@@ -172,7 +172,7 @@
         cell = (UITableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
         if (!cell) {
             cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-            cell.selectionStyle = UITableViewCellSelectionStyleGray;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
             [cell setBackgroundColor:[UIColor clearColor]];
             cell.userInteractionEnabled = YES;
             
