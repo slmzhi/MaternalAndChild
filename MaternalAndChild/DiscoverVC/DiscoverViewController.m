@@ -7,6 +7,7 @@
 //
 
 #import "DiscoverViewController.h"
+#import "DateViewController.h"
 
 @interface DiscoverViewController ()
 
@@ -17,6 +18,7 @@
     UIImageView* headProtrait;
     UIButton* naturalResourcesViewBtn;
     UITableView* table;
+    DateViewController* dateVC;
 }
 
 @synthesize banner;
@@ -105,7 +107,11 @@
     switch (tag) {
         case 1001:
         {
-            NSLog(@"<<");
+            if (!dateVC) {
+                dateVC = [[DateViewController alloc] init];
+            }
+            [self.view addSubview:dateVC.view];
+
         }
             break;
         case 1002:

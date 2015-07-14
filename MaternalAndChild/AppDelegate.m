@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "RootViewController.h"
 #import "sys/utsname.h"
 
 @interface AppDelegate ()
@@ -17,6 +16,8 @@
 @implementation AppDelegate {
     RootViewController* rootViewController;
 }
+
+@synthesize rootViewController;
 
 #pragma mark - sysMethod
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {

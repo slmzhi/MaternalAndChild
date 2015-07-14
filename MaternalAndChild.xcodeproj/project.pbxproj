@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2F9E08DC1B54B78300841964 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08DB1B54B78300841964 /* line@2x.png */; };
 		2F9E08DE1B54E31D00841964 /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08DD1B54E31D00841964 /* time@2x.png */; };
+		2F9E08E21B54F84900841964 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E08E11B54F84900841964 /* DateViewController.m */; };
+		2F9E08E51B55009900841964 /* line2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08E31B55009900841964 /* line2@2x.png */; };
+		2F9E08E61B55009900841964 /* time2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08E41B55009900841964 /* time2@2x.png */; };
 		2FF2FD771B5381FB00200059 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD761B5381FB00200059 /* main.m */; };
 		2FF2FD7A1B5381FB00200059 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FF2FD791B5381FB00200059 /* AppDelegate.m */; };
 		2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FF2FD841B5381FB00200059 /* Images.xcassets */; };
@@ -41,6 +44,10 @@
 		13D03AC64AE74AEFCF5726FA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		2F9E08DB1B54B78300841964 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Resource/Image/line@2x.png"; sourceTree = "<group>"; };
 		2F9E08DD1B54E31D00841964 /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "time@2x.png"; path = "Resource/Image/time@2x.png"; sourceTree = "<group>"; };
+		2F9E08E01B54F84900841964 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateViewController.h; path = DiscoverVC/DateView/DateViewController.h; sourceTree = "<group>"; };
+		2F9E08E11B54F84900841964 /* DateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DateViewController.m; path = DiscoverVC/DateView/DateViewController.m; sourceTree = "<group>"; };
+		2F9E08E31B55009900841964 /* line2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line2@2x.png"; path = "Resource/Image/line2@2x.png"; sourceTree = "<group>"; };
+		2F9E08E41B55009900841964 /* time2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "time2@2x.png"; path = "Resource/Image/time2@2x.png"; sourceTree = "<group>"; };
 		2FF2FD711B5381FB00200059 /* MaternalAndChild.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MaternalAndChild.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FF2FD751B5381FB00200059 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2FF2FD761B5381FB00200059 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +102,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F9E08DF1B54F80C00841964 /* DateView */ = {
+			isa = PBXGroup;
+			children = (
+				2F9E08E01B54F84900841964 /* DateViewController.h */,
+				2F9E08E11B54F84900841964 /* DateViewController.m */,
+			);
+			name = DateView;
+			sourceTree = "<group>";
+		};
 		2FF2FD681B5381FB00200059 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +182,7 @@
 		2FF2FDA01B5382C100200059 /* DiscoverVC */ = {
 			isa = PBXGroup;
 			children = (
+				2F9E08DF1B54F80C00841964 /* DateView */,
 				2FF2FDA21B5382D600200059 /* DiscoverViewController.h */,
 				2FF2FDA11B5382D600200059 /* DiscoverViewController.m */,
 			);
@@ -205,6 +222,8 @@
 		2FF2FDB41B5389A200200059 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				2F9E08E31B55009900841964 /* line2@2x.png */,
+				2F9E08E41B55009900841964 /* time2@2x.png */,
 				2F9E08DD1B54E31D00841964 /* time@2x.png */,
 				2F9E08DB1B54B78300841964 /* line@2x.png */,
 				2FF2FDB51B5389AC00200059 /* icon_guanbi.png */,
@@ -348,7 +367,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF2FD881B5381FB00200059 /* LaunchScreen.xib in Resources */,
+				2F9E08E51B55009900841964 /* line2@2x.png in Resources */,
 				2F9E08DE1B54E31D00841964 /* time@2x.png in Resources */,
+				2F9E08E61B55009900841964 /* time2@2x.png in Resources */,
 				2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */,
 				2F9E08DC1B54B78300841964 /* line@2x.png in Resources */,
 				2FF2FDB61B5389AC00200059 /* icon_guanbi.png in Resources */,
@@ -406,6 +427,7 @@
 				2FF2FDB21B53830100200059 /* RootViewController.m in Sources */,
 				2FF2FDA31B5382D600200059 /* DiscoverViewController.m in Sources */,
 				2FF2FDAE1B5382F000200059 /* GTMBase64.m in Sources */,
+				2F9E08E21B54F84900841964 /* DateViewController.m in Sources */,
 				2FF2FDBB1B538D0800200059 /* FriendsViewController.m in Sources */,
 				2FF2FDBF1B538EB100200059 /* MerchantViewController.m in Sources */,
 				2FF2FDAD1B5382F000200059 /* Base64.mm in Sources */,
