@@ -14,35 +14,36 @@
 
 @implementation DateViewController {
     UITableView* table;
-    CGRect tableFrameNormal;
+    UIButton* hideThisViewBtn;
+    NSArray* data;
+    MASConstraint* constraint;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.userInteractionEnabled = YES;
-
+//    self.view.translatesAutoresizingMaskIntoConstraints = NO;
 
     [self initTableView];
     [self initHideThisViewAction];
 
-    tableFrameNormal = table.frame;
+    data = @[
+             @{@"2015":@[@"1", @"3", @"5", @"7", @"9", @"11"]},
+             @{@"2014":@[@"2", @"8", @"10", @"12"]},
+             @{@"2013":@[@"2", @"3", @"4", @"5", @"6", @"8", @"9", @"11", @"12"]}
+             ];
+    [table reloadData];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
 
-    [self showHideThisView:YES];
-}
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self showHideThisView:YES];
+    });
 
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - userMethod
@@ -59,13 +60,16 @@
     table.separatorStyle = UITableViewCellSeparatorStyleNone;
     table.backgroundColor = [UIColor colorWithRed:240/255.0 green:239/255.0 blue:245/255.0 alpha:1.0];
     [table mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(ws.view).width.insets(UIEdgeInsetsMake(20, ws.view.frame.size.width/3.0, delegate.tabbarHeight+30, 0));
+        make.left.offset(ws.view.frame.size.width);
+        make.top.offset(20);
+        make.right.offset(ws.view.frame.size.width/3.0*2);
+        make.bottom.offset(-delegate.tabbarHeight-30);
     }];
-    
+
 }
 
 - (void)initHideThisViewAction {
-    UIButton* hideThisViewBtn = [[UIButton alloc] init];
+    hideThisViewBtn = [[UIButton alloc] init];
     [self.view addSubview:hideThisViewBtn];
     [hideThisViewBtn setTitle:@">>" forState:UIControlStateNormal];
     hideThisViewBtn.tag = 1001;
@@ -82,18 +86,26 @@
 
 - (void)showHideThisView:(BOOL)show {
     WS(ws)
-    __block CGRect frame = self.view.frame;
-    frame.origin.x = show?frame.size.width:0;
-    [self.view setFrame:frame];
-    [UIView animateWithDuration:0.3 animations:^{
-        frame.origin.x = show?0:frame.size.width;
-        [ws.view setFrame:frame];
-    } completion:^(BOOL finished) {
-        if (!show) {
-            [ws.view removeFromSuperview];
-        }
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [table mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.offset(show?ws.view.frame.size.width/3.0:ws.view.frame.size.width);
+            make.right.offset(show?0:ws.view.frame.size.width/3.0*2);
+        }];
+        [hideThisViewBtn mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(table.mas_left).with.offset(0);
+        }];
+        [table setNeedsUpdateConstraints];
+        [table updateConstraintsIfNeeded];
+        [UIView animateWithDuration:0.3 animations:^{
+            [table layoutIfNeeded];
+            [hideThisViewBtn layoutIfNeeded];
+        } completion:^(BOOL finished) {
+            if (!show) {
+                [ws.view removeFromSuperview];
+            }
+        }];
 
-    }];
+    });
 
 }
 
@@ -122,7 +134,7 @@
             [cell.contentView addSubview:time];
             time.tag = 1101;
             UIImage* img = [UIImage imageNamed:@"time2"];
-            img = [img resizableImageWithCapInsets:UIEdgeInsetsMake(40, 0, 40, 0) resizingMode:UIImageResizingModeStretch];
+            img = [img resizableImageWithCapInsets:UIEdgeInsetsMake(25, 0, 25, 0) resizingMode:UIImageResizingModeStretch];
             time.image = img;
             [time mas_makeConstraints:^(MASConstraintMaker *make) {
                 make.left.offset(26);
@@ -141,7 +153,7 @@
             cell.userInteractionEnabled = YES;
 
         }
-        [self setDateInfo:cell.contentView];
+        [self setDateInfo:cell.contentView info:[data objectAtIndex:indexPath.row]];
 
     }
 
@@ -152,7 +164,7 @@
     if (section == 0) {
         return 1;
     } else if (section == 1) {
-        return 10;
+        return [data count];
     }
     return 0;
 }
@@ -161,8 +173,9 @@
     if (indexPath.section == 0) {
         return 60.0;
     } else if (indexPath.section == 1) {
-        NSArray* arr = @[@60.0,@100.0,@80.0,@120.0,@60.0,@90.0,@150.0,@80.0,@60.0,@80.0];
-        CGFloat height = [[arr objectAtIndex:indexPath.row] floatValue];
+        NSDictionary* dic = [data objectAtIndex:indexPath.row];
+        NSInteger count = [[dic objectForKey:[[dic allKeys] objectAtIndex:0]] count];
+        CGFloat height = (count/4+(count%4>0?1:0))*60+10;
         return height;
     }
     return 0;
@@ -172,8 +185,8 @@
     return 2;
 }
 
-- (void)setDateInfo:(UIView*)superView {
-    UIImageView* timeLine = (UIImageView*)[superView viewWithTag:3201];
+- (void)setDateInfo:(UIView*)superView info:(NSDictionary*)info {
+    UIImageView* timeLine = (UIImageView*)[superView viewWithTag:1201];
     if (!timeLine) {
         timeLine = [[UIImageView alloc] init];
         [superView addSubview:timeLine];
@@ -181,7 +194,7 @@
 
     }
     UIImage* img = [UIImage imageNamed:@"line2"];
-    img = [img resizableImageWithCapInsets:UIEdgeInsetsMake(50, 0, 50, 0) resizingMode:UIImageResizingModeStretch];
+    img = [img resizableImageWithCapInsets:UIEdgeInsetsMake(40, 0, 40, 0) resizingMode:UIImageResizingModeStretch];
     timeLine.image = img;
     [timeLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(28);
@@ -189,6 +202,26 @@
         make.bottom.offset(0);
         make.width.offset(18);
     }];
+
+    UILabel* year = (UILabel*)[superView viewWithTag:1202];
+    if (!year) {
+        year = [[UILabel alloc] init];
+        [superView addSubview:year];
+        year.tag = 1202;
+        year.backgroundColor = [UIColor clearColor];
+        year.textColor = [UIColor blackColor];
+        year.font = [UIFont boldSystemFontOfSize:16.0];
+        [year mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(timeLine.mas_right).with.offset(6);
+            make.top.offset(3);
+            make.right.offset(0);
+            make.height.offset(20);
+        }];
+    }
+    if ([[info allKeys] objectAtIndex:0]) {
+        year.text = [[info allKeys] objectAtIndex:0];
+    }
+
 }
 
 /*
