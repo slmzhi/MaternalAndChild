@@ -30,12 +30,9 @@
     [[self navigationController] setNavigationBarHidden:YES animated:NO];
     [[self view] setUserInteractionEnabled:YES];
 
-
-//    [self initBanner];
     [self initNaturalResources];
     [self initDateView];
     [self initTableView];
-//    [self initHeadPortrait];
 
 }
 
@@ -62,7 +59,7 @@
     [table mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(ws.view).offset(0);
         make.right.equalTo(ws.view).offset(0);
-        make.top.equalTo(ws.view).offset(0);
+        make.top.equalTo(ws.view).offset(00);
         make.bottom.equalTo(naturalResourcesViewBtn.mas_top).with.offset(0);
     }];
 }
@@ -74,7 +71,8 @@
     [self.view addSubview:naturalResourcesViewBtn];
     [naturalResourcesViewBtn setTitle:@"/\\" forState:UIControlStateNormal];
     naturalResourcesViewBtn.tag = 1002;
-    naturalResourcesViewBtn.backgroundColor = [UIColor greenColor];
+    naturalResourcesViewBtn.backgroundColor = [UIColor colorWithRed:240/255.0 green:239/255.0 blue:245/255.0 alpha:1.0];
+    [naturalResourcesViewBtn setTitleColor:[UIColor colorWithRed:169/255.0 green:169/255.0 blue:169/255.0 alpha:1.0] forState:UIControlStateNormal];
     [naturalResourcesViewBtn addTarget:self action:NSSelectorFromString(@"btnAction:") forControlEvents:UIControlEventTouchUpInside];
     [naturalResourcesViewBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(ws.view).with.offset(0);
@@ -90,7 +88,8 @@
     [self.view addSubview:dateViewBtn];
     [dateViewBtn setTitle:@"<<" forState:UIControlStateNormal];
     dateViewBtn.tag = 1001;
-    dateViewBtn.backgroundColor = [UIColor greenColor];
+    dateViewBtn.backgroundColor = [UIColor clearColor];
+    [dateViewBtn setTitleColor:[UIColor colorWithRed:169/255.0 green:169/255.0 blue:169/255.0 alpha:1.0] forState:UIControlStateNormal];
     [dateViewBtn addTarget:self action:NSSelectorFromString(@"btnAction:") forControlEvents:UIControlEventTouchUpInside];
     [dateViewBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(ws.view).with.offset(-10);
