@@ -16,6 +16,7 @@
     UITableView* table;
     UIButton* hideThisViewBtn;
     NSArray* data;
+    UIButton* currentMonthBtn;
 }
 
 - (void)viewDidLoad {
@@ -171,7 +172,7 @@
     } else if (indexPath.section == 1) {
         NSDictionary* dic = [data objectAtIndex:indexPath.row];
         NSInteger count = [[dic objectForKey:[[dic allKeys] objectAtIndex:0]] count];
-        CGFloat height = (count/4+(count%4>0?1:0))*60+10;
+        CGFloat height = (count/4+(count%4>0?1:0))*50+40;
         return height;
     }
     return 0;
@@ -214,10 +215,67 @@
             make.height.offset(20);
         }];
     }
-    if ([[info allKeys] objectAtIndex:0]) {
-        year.text = [[info allKeys] objectAtIndex:0];
+    NSString* key = [[info allKeys] objectAtIndex:0];
+    year.text = key;
+
+    NSArray* monthArr = [info objectForKey:key];
+    UIView* month = [superView viewWithTag:1203];
+    if (!month) {
+        month = [[UIView alloc] init];
+        [superView addSubview:month];
+        month.backgroundColor = [UIColor clearColor];
+        month.userInteractionEnabled = YES;
+        [month mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(timeLine.mas_right).with.offset(4);
+            make.right.equalTo(superView);
+            make.bottom.equalTo(superView);
+            make.top.equalTo(year.mas_bottom).with.offset(5);
+        }];
+    }
+    NSArray* subViewArr = [month subviews];
+    for (UIView* subView in subViewArr) {
+        [subView removeFromSuperview];
+    }
+    for (int i=0; i<[monthArr count]; i++) {
+        NSString* m = [monthArr objectAtIndex:i];
+        UIButton* monthBtn = [[UIButton alloc] init];
+        [month addSubview:monthBtn];
+        int date = [key intValue];
+        date = date<<sizeof(int)*8/2;
+        date += [m intValue];
+        [monthBtn setTag:date];
+        [monthBtn addTarget:self action:NSSelectorFromString(@"dateBtnAction:") forControlEvents:UIControlEventTouchUpInside];
+        [monthBtn setBackgroundColor:[UIColor clearColor]];
+        monthBtn.layer.masksToBounds = YES;
+        monthBtn.layer.cornerRadius = 18.0;
+        monthBtn.layer.borderColor = [UIColor blackColor].CGColor;
+        monthBtn.layer.borderWidth = 1;
+        monthBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        [monthBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [monthBtn setTitle:[NSString stringWithFormat:@"%@月", m] forState:UIControlStateNormal];
+        int row = i/4;
+        int line = i%4;
+        [monthBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.offset(46*line);
+            make.top.offset(50*row);
+            make.width.offset(36);
+            make.height.offset(36);
+        }];
     }
 
+}
+
+- (void)dateBtnAction:(UIButton*)sender {
+    if (currentMonthBtn) {
+        currentMonthBtn.backgroundColor = [UIColor clearColor];
+    }
+    sender.backgroundColor = [UIColor colorWithRed:26/225.0 green:156/255.0 blue:199/255.0 alpha:1.0];
+    currentMonthBtn = sender;
+
+    int tag = (int)sender.tag;
+    int y = tag>>sizeof(int)*8/2;
+    int m = tag-(y<<sizeof(int)*8/2);
+    NSLog(@"%d 年 %d 月", y, m);
 }
 
 /*
