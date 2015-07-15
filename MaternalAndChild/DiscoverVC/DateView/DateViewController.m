@@ -30,7 +30,10 @@
     data = @[
              @{@"2015":@[@"1", @"3", @"5", @"7", @"9", @"11"]},
              @{@"2014":@[@"2", @"8", @"10", @"12"]},
-             @{@"2013":@[@"2", @"3", @"4", @"5", @"6", @"8", @"9", @"11", @"12"]}
+             @{@"2013":@[@"2", @"3", @"4", @"5", @"6", @"8", @"9", @"11", @"12"]},
+             @{@"2012":@[@"2", @"3", @"4", @"5", @"6", @"8", @"9", @"12"]},
+             @{@"2011":@[@"2", @"3", @"4", @"6", @"8", @"9", @"11", @"12"]},
+             @{@"2010":@[@"2", @"5", @"6", @"8", @"9", @"11", @"12"]}
              ];
     [table reloadData];
 
@@ -223,6 +226,7 @@
     if (!month) {
         month = [[UIView alloc] init];
         [superView addSubview:month];
+        month.tag = 1203;
         month.backgroundColor = [UIColor clearColor];
         month.userInteractionEnabled = YES;
         [month mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -245,7 +249,12 @@
         date += [m intValue];
         [monthBtn setTag:date];
         [monthBtn addTarget:self action:NSSelectorFromString(@"dateBtnAction:") forControlEvents:UIControlEventTouchUpInside];
-        [monthBtn setBackgroundColor:[UIColor clearColor]];
+        if (date == currentMonthBtn.tag) {
+            [monthBtn setBackgroundColor:[UIColor colorWithRed:26/225.0 green:156/255.0 blue:199/255.0 alpha:1.0]];
+            currentMonthBtn = monthBtn;
+        } else {
+            [monthBtn setBackgroundColor:[UIColor clearColor]];
+        }
         monthBtn.layer.masksToBounds = YES;
         monthBtn.layer.cornerRadius = 18.0;
         monthBtn.layer.borderColor = [UIColor blackColor].CGColor;
