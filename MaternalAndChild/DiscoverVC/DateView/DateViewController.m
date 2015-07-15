@@ -236,6 +236,8 @@
             make.top.equalTo(year.mas_bottom).with.offset(5);
         }];
     }
+
+    CGFloat width = (_MainScreen_Width/3.0*2-46)/4.0;
     NSArray* subViewArr = [month subviews];
     for (UIView* subView in subViewArr) {
         [subView removeFromSuperview];
@@ -256,19 +258,19 @@
             [monthBtn setBackgroundColor:[UIColor clearColor]];
         }
         monthBtn.layer.masksToBounds = YES;
-        monthBtn.layer.cornerRadius = 18.0;
+        monthBtn.layer.cornerRadius = 17.0;
         monthBtn.layer.borderColor = [UIColor blackColor].CGColor;
         monthBtn.layer.borderWidth = 1;
-        monthBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+        monthBtn.titleLabel.font = [UIFont systemFontOfSize:13];
         [monthBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [monthBtn setTitle:[NSString stringWithFormat:@"%@月", m] forState:UIControlStateNormal];
         int row = i/4;
         int line = i%4;
         [monthBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.offset(46*line);
+            make.left.offset(width*line);
             make.top.offset(50*row);
-            make.width.offset(36);
-            make.height.offset(36);
+            make.width.offset(34);
+            make.height.offset(34);
         }];
     }
 

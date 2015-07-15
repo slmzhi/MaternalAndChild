@@ -16,6 +16,7 @@
 #define _MainScreenFrame    [[UIScreen mainScreen] bounds]
 #define _MainScreen_Width   _MainScreenFrame.size.width
 #define _MainScreen_Height  (IOS7_LATER?_MainScreenFrame.size.height:_MainScreenFrame.size.height-20)
+#define kScreenSize [UIScreen mainScreen].bounds.size
 
 #import "Masonry.h"
 #import <SDWebImage/UIImageView+WebCache.h>

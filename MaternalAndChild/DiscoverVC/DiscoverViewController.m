@@ -8,6 +8,7 @@
 
 #import "DiscoverViewController.h"
 #import "DateViewController.h"
+#import "RecommendViewController.h"
 
 @interface DiscoverViewController ()
 
@@ -19,6 +20,9 @@
     UIButton* naturalResourcesViewBtn;
     UITableView* table;
     DateViewController* dateVC;
+    RecommendViewController* recommend;
+
+    NSArray* data;
 }
 
 @synthesize banner;
@@ -36,6 +40,52 @@
     [self initDateView];
     [self initTableView];
 
+    data = @[@{@"date":@[@"2015", @"7", @"7"],
+                 @"text":@"某剩女虔诚信奉上帝，上帝感动决定奖励她一个愿望。\
+               　　剩女说：我的愿望是成为高高在上滴女王，住在超级豪华滴复合式城堡，身边有美男围绕，手下有无数工人为我辛勤工作……\
+               　　上帝答应了。\
+               　　然后……\
+               　　剩女变成了一只女王……蜂！",
+               @"photo":@[@"http://img1.imgtn.bdimg.com/it/u=1005212286,2432746147&fm=21&gp=0.jpg", @"http://img4.imgtn.bdimg.com/it/u=701528370,1718452498&fm=21&gp=0.jpg"],
+               @"favour":@"77",
+               @"comment":@"33"},
+             @{@"date":@[@"2015", @"7", @"5"],
+               @"text":@"儿子：妈妈，明天家长会咋办？\
+                 　　妈妈：什么咋办，我去参加就是了呀.......\
+                 　　儿子：不行，老师说了必须要爸爸参加！\
+                 　　妈妈：可你爸爸出差了，要很久才回来.....\
+                 　　儿子：要不请隔壁王叔叔帮帮忙吧？\
+                 　　妈妈：这怎么行，他又不是你爸？\
+                 　　儿子：管他是不是，只要长得像，老师就不会怀疑.....\
+                 　　妈妈：........",
+               @"photo":@[@"http://img4.imgtn.bdimg.com/it/u=2314042252,4134060736&fm=21&gp=0.jpg"],
+               @"favour":@"13",
+               @"comment":@"23"},
+             @{@"date":@[@"2015", @"7", @"1"],
+               @"text":@"二哥是处女座的大家都知道，向女生表白却因此被拒绝。女生：我不喜欢处女座的男生……二哥：其实处女座也有十大优点的，\
+                 仔细认真，循规蹈矩，勤奋上进，绝不屈服，永不气馁，事事谨慎小心，谦逊不夸大，对爱情忠实，正义感强……\
+                 　　女生打断他说：你优点还好挺多的，咱们交往试试吧！\
+                 　　二哥怒喊：你让我把最后一个说完行不行？最后一个：追求完美……好了，终于说完了，你刚才说什么？？？\
+                 　　女生头也不回地走了……",
+               @"photo":@[@"http://img3.imgtn.bdimg.com/it/u=85967481,2078707596&fm=21&gp=0.jpg", @"http://img1.imgtn.bdimg.com/it/u=539380423,2945182428&fm=21&gp=0.jpg", @"http://img4.imgtn.bdimg.com/it/u=702139592,2102071640&fm=21&gp=0.jpg", @"http://img3.imgtn.bdimg.com/it/u=3619654095,2995625302&fm=21&gp=0.jpg"],
+               @"favour":@"66",
+               @"comment":@"44"},
+             @{@"date":@[@"2015", @"6", @"4"],
+               @"text":@"老公：你说我是A型血，你是B型血，孩子却是O型血是怎么回事？\
+                 　　老婆：这都怪你！孩子出生你也不在身边，当时孩子生下来体弱贫血，\
+                 必须输血，好心的邻居大哥给输的血，孩子才抢救过来！",
+               @"photo":@[@"http://img2.imgtn.bdimg.com/it/u=674974778,3619962318&fm=21&gp=0.jpg", @"http://img4.imgtn.bdimg.com/it/u=701528370,1718452498&fm=21&gp=0.jpg"],
+               @"favour":@"33",
+               @"comment":@"9"},
+             @{@"date":@[@"2014", @"7", @"5"],
+               @"text":@"凤姐不小心掉进了海豚养殖池里。就在这千钧一发之际，一只雄性海豚救了凤姐，把她从池里推到了岸边。\
+                 　　雌性海豚生气地问：“你为什么要救她？”\
+                 　　雄性海豚笑着说：“一个这么丑的人如果死在了池里，我会天天做恶梦的。”",
+               @"photo":@[@"http://img1.imgtn.bdimg.com/it/u=3942008063,1487971776&fm=21&gp=0.jpg"],
+               @"favour":@"13",
+               @"comment":@"0"}
+             ];
+    [table reloadData];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -116,7 +166,10 @@
             break;
         case 1002:
         {
-            NSLog(@"/\\");
+            if (!recommend) {
+                recommend=[[RecommendViewController alloc] init];
+            }
+            [self.view addSubview:recommend.view];
         }
             break;
 
@@ -182,7 +235,7 @@
             cell.userInteractionEnabled = YES;
             
         }
-        [self setMsgInfo:cell.contentView];
+        [self setMsgInfo:cell.contentView info:nil];
 
     }
 
@@ -193,7 +246,7 @@
     if (section == 0 || section == 1) {
         return 1;
     } else if (section == 2) {
-        return 10;
+        return [data count];
     }
     return 0;
 }
@@ -204,8 +257,23 @@
     } else if (indexPath.section == 1) {
         return 60.0;
     } else if (indexPath.section == 2) {
+//        CGFloat height = 0;
+//        NSDictionary* info = [data objectAtIndex:indexPath.row];
+//        NSString* text = [info objectForKey:@"text"];
+//        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
+//        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+//        NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSParagraphStyleAttributeName:paragraphStyle.copy};
+//
+////        CGSize labelSize = [text boundingRectWithSize:CGSizeMake(self.width - joinBtn.width - 4, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+//        /*
+//         This method returns fractional sizes (in the size component of the returned CGRect); to use a returned size to size views, you must use raise its value to the nearest higher integer using the ceil function.
+//         */
+////        labelSize.height = ceil(labelSize.height);
+////        labelSize.width = ceil(labelSize.width);
+
         NSArray* arr = @[@60.0,@100.0,@80.0,@120.0,@60.0,@90.0,@150.0,@80.0,@60.0,@80.0];
         CGFloat height = [[arr objectAtIndex:indexPath.row] floatValue];
+
         return height;
     }
     return 0;
@@ -251,7 +319,7 @@
 
 }
 
-- (void)setMsgInfo:(UIView*)superView {
+- (void)setMsgInfo:(UIView*)superView info:(NSDictionary*)info {
     UIImageView* timeLine = (UIImageView*)[superView viewWithTag:3201];
     if (!timeLine) {
         timeLine = [[UIImageView alloc] init];
@@ -268,6 +336,25 @@
         make.bottom.offset(0);
         make.width.offset(18);
     }];
+
+    UILabel* year = (UILabel*)[superView viewWithTag:1202];
+    if (!year) {
+        year = [[UILabel alloc] init];
+        [superView addSubview:year];
+        year.tag = 1202;
+        year.backgroundColor = [UIColor clearColor];
+        year.textColor = [UIColor blackColor];
+        year.font = [UIFont boldSystemFontOfSize:16.0];
+        [year mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(timeLine.mas_right).with.offset(6);
+            make.top.offset(3);
+            make.right.offset(0);
+            make.height.offset(20);
+        }];
+    }
+    NSString* key = [[info allKeys] objectAtIndex:0];
+    year.text = key;
+
 }
 
 /*
