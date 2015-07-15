@@ -23,6 +23,7 @@
     RecommendViewController* recommend;
 
     NSArray* data;
+    NSMutableDictionary* cellHeightDic;
 }
 
 @synthesize banner;
@@ -41,47 +42,28 @@
     [self initTableView];
 
     data = @[@{@"date":@[@"2015", @"7", @"7"],
-                 @"text":@"某剩女虔诚信奉上帝，上帝感动决定奖励她一个愿望。\
-               　　剩女说：我的愿望是成为高高在上滴女王，住在超级豪华滴复合式城堡，身边有美男围绕，手下有无数工人为我辛勤工作……\
-               　　上帝答应了。\
-               　　然后……\
-               　　剩女变成了一只女王……蜂！",
-               @"photo":@[@"http://img1.imgtn.bdimg.com/it/u=1005212286,2432746147&fm=21&gp=0.jpg", @"http://img4.imgtn.bdimg.com/it/u=701528370,1718452498&fm=21&gp=0.jpg"],
+                 @"text":@"某剩女虔诚信奉上帝，上帝感动决定奖励她一个愿望。\n剩女说：我的愿望是成为高高在上滴女王，住在超级豪华滴复合式城堡，身边有美男围绕，手下有无数工人为我辛勤工作……\n上帝答应了。\n然后……\n剩女变成了一只女王……蜂！",
+               @"photo":@[@"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3042410010,1849246464&fm=116&gp=0.jpg", @"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862868179,785881333&fm=116&gp=0.jpg"],
                @"favour":@"77",
                @"comment":@"33"},
              @{@"date":@[@"2015", @"7", @"5"],
-               @"text":@"儿子：妈妈，明天家长会咋办？\
-                 　　妈妈：什么咋办，我去参加就是了呀.......\
-                 　　儿子：不行，老师说了必须要爸爸参加！\
-                 　　妈妈：可你爸爸出差了，要很久才回来.....\
-                 　　儿子：要不请隔壁王叔叔帮帮忙吧？\
-                 　　妈妈：这怎么行，他又不是你爸？\
-                 　　儿子：管他是不是，只要长得像，老师就不会怀疑.....\
-                 　　妈妈：........",
-               @"photo":@[@"http://img4.imgtn.bdimg.com/it/u=2314042252,4134060736&fm=21&gp=0.jpg"],
+               @"text":@"儿子：妈妈，明天家长会咋办？\n妈妈：什么咋办，我去参加就是了呀.......\n儿子：不行，老师说了必须要爸爸参加！\n妈妈：可你爸爸出差了，要很久才回来.....\n儿子：要不请隔壁王叔叔帮帮忙吧？\n妈妈：这怎么行，他又不是你爸？\n儿子：管他是不是，只要长得像，老师就不会怀疑.....\n妈妈：........",
+               @"photo":@[@"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2651666712,3423349209&fm=116&gp=0.jpg"],
                @"favour":@"13",
                @"comment":@"23"},
              @{@"date":@[@"2015", @"7", @"1"],
-               @"text":@"二哥是处女座的大家都知道，向女生表白却因此被拒绝。女生：我不喜欢处女座的男生……二哥：其实处女座也有十大优点的，\
-                 仔细认真，循规蹈矩，勤奋上进，绝不屈服，永不气馁，事事谨慎小心，谦逊不夸大，对爱情忠实，正义感强……\
-                 　　女生打断他说：你优点还好挺多的，咱们交往试试吧！\
-                 　　二哥怒喊：你让我把最后一个说完行不行？最后一个：追求完美……好了，终于说完了，你刚才说什么？？？\
-                 　　女生头也不回地走了……",
-               @"photo":@[@"http://img3.imgtn.bdimg.com/it/u=85967481,2078707596&fm=21&gp=0.jpg", @"http://img1.imgtn.bdimg.com/it/u=539380423,2945182428&fm=21&gp=0.jpg", @"http://img4.imgtn.bdimg.com/it/u=702139592,2102071640&fm=21&gp=0.jpg", @"http://img3.imgtn.bdimg.com/it/u=3619654095,2995625302&fm=21&gp=0.jpg"],
+               @"text":@"二哥是处女座的大家都知道，向女生表白却因此被拒绝。女生：我不喜欢处女座的男生……二哥：其实处女座也有十大优点的，\n仔细认真，循规蹈矩，勤奋上进，绝不屈服，永不气馁，事事谨慎小心，谦逊不夸大，对爱情忠实，正义感强……\n女生打断他说：你优点还好挺多的，咱们交往试试吧！\n二哥怒喊：你让我把最后一个说完行不行？最后一个：追求完美……好了，终于说完了，你刚才说什么？？？\n女生头也不回地走了……",
+               @"photo":@[@"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=298400068,822827541&fm=116&gp=0.jpg", @"https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3658159165,4286511134&fm=116&gp=0.jpg", @"https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3371032114,892333757&fm=116&gp=0.jpg", @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1005212286,2432746147&fm=116&gp=0.jpg"],
                @"favour":@"66",
                @"comment":@"44"},
              @{@"date":@[@"2015", @"6", @"4"],
-               @"text":@"老公：你说我是A型血，你是B型血，孩子却是O型血是怎么回事？\
-                 　　老婆：这都怪你！孩子出生你也不在身边，当时孩子生下来体弱贫血，\
-                 必须输血，好心的邻居大哥给输的血，孩子才抢救过来！",
-               @"photo":@[@"http://img2.imgtn.bdimg.com/it/u=674974778,3619962318&fm=21&gp=0.jpg", @"http://img4.imgtn.bdimg.com/it/u=701528370,1718452498&fm=21&gp=0.jpg"],
+               @"text":@"老公：你说我是A型血，你是B型血，孩子却是O型血是怎么回事？\n老婆：这都怪你！孩子出生你也不在身边，当时孩子生下来体弱贫血，\n必须输血，好心的邻居大哥给输的血，孩子才抢救过来！",
+               @"photo":@[@"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=3229727480,642457655&fm=116&gp=0.jpg", @"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=2783552916,508796275&fm=116&gp=0.jpg"],
                @"favour":@"33",
                @"comment":@"9"},
              @{@"date":@[@"2014", @"7", @"5"],
-               @"text":@"凤姐不小心掉进了海豚养殖池里。就在这千钧一发之际，一只雄性海豚救了凤姐，把她从池里推到了岸边。\
-                 　　雌性海豚生气地问：“你为什么要救她？”\
-                 　　雄性海豚笑着说：“一个这么丑的人如果死在了池里，我会天天做恶梦的。”",
-               @"photo":@[@"http://img1.imgtn.bdimg.com/it/u=3942008063,1487971776&fm=21&gp=0.jpg"],
+               @"text":@"凤姐不小心掉进了海豚养殖池里。就在这千钧一发之际，一只雄性海豚救了凤姐，把她从池里推到了岸边。\n雌性海豚生气地问：“你为什么要救她？”\n雄性海豚笑着说：“一个这么丑的人如果死在了池里，我会天天做恶梦的。”",
+               @"photo":@[@"https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=705115385,3322141037&fm=116&gp=0.jpg"],
                @"favour":@"13",
                @"comment":@"0"}
              ];
@@ -235,7 +217,7 @@
             cell.userInteractionEnabled = YES;
             
         }
-        [self setMsgInfo:cell.contentView info:nil];
+        [self setMsgInfo:cell.contentView info:[data objectAtIndex:indexPath.row]];
 
     }
 
@@ -257,22 +239,34 @@
     } else if (indexPath.section == 1) {
         return 60.0;
     } else if (indexPath.section == 2) {
-//        CGFloat height = 0;
-//        NSDictionary* info = [data objectAtIndex:indexPath.row];
-//        NSString* text = [info objectForKey:@"text"];
-//        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-//        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-//        NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:12], NSParagraphStyleAttributeName:paragraphStyle.copy};
-//
-////        CGSize labelSize = [text boundingRectWithSize:CGSizeMake(self.width - joinBtn.width - 4, 100) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
-//        /*
-//         This method returns fractional sizes (in the size component of the returned CGRect); to use a returned size to size views, you must use raise its value to the nearest higher integer using the ceil function.
-//         */
-////        labelSize.height = ceil(labelSize.height);
-////        labelSize.width = ceil(labelSize.width);
+        if (!cellHeightDic) {
+            cellHeightDic = [[NSMutableDictionary alloc] initWithCapacity:20];
+        }
+        NSString* key = [NSString stringWithFormat:@"%ld", indexPath.row];
+        NSNumber* h = [cellHeightDic objectForKey:key];
+        if (h) {
+            return [h floatValue];
+        }
+        CGFloat height = 76;
+        NSDictionary* info = [data objectAtIndex:indexPath.row];
 
-        NSArray* arr = @[@60.0,@100.0,@80.0,@120.0,@60.0,@90.0,@150.0,@80.0,@60.0,@80.0];
-        CGFloat height = [[arr objectAtIndex:indexPath.row] floatValue];
+        NSString* text = [info objectForKey:@"text"];
+        NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
+        NSDictionary *attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:14], NSParagraphStyleAttributeName:paragraphStyle.copy};
+        CGSize labelSize = [text boundingRectWithSize:CGSizeMake(_MainScreen_Width-64, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil].size;
+        labelSize.height = ceil(labelSize.height);
+        height += labelSize.height;
+
+        NSArray* photos = [info objectForKey:@"photo"];
+        if ([photos count] > 1) {
+            height += (((_MainScreen_Width-64-20)/3.0)*([photos count]/3+([photos count]%3>0?1:0)));
+        } else {
+            height += 100;
+        }
+        if (!h) {
+            [cellHeightDic setObject:[NSNumber numberWithFloat:height] forKey:key];
+        }
 
         return height;
     }
@@ -337,23 +331,157 @@
         make.width.offset(18);
     }];
 
-    UILabel* year = (UILabel*)[superView viewWithTag:1202];
-    if (!year) {
-        year = [[UILabel alloc] init];
-        [superView addSubview:year];
-        year.tag = 1202;
-        year.backgroundColor = [UIColor clearColor];
-        year.textColor = [UIColor blackColor];
-        year.font = [UIFont boldSystemFontOfSize:16.0];
-        [year mas_makeConstraints:^(MASConstraintMaker *make) {
+    UILabel* date = (UILabel*)[superView viewWithTag:1202];
+    if (!date) {
+        date = [[UILabel alloc] init];
+        [superView addSubview:date];
+        date.tag = 1202;
+        date.backgroundColor = [UIColor clearColor];
+        date.textColor = [UIColor blackColor];
+        date.font = [UIFont boldSystemFontOfSize:16.0];
+        [date mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(timeLine.mas_right).with.offset(6);
-            make.top.offset(3);
+            make.top.offset(6);
             make.right.offset(0);
             make.height.offset(20);
         }];
     }
-    NSString* key = [[info allKeys] objectAtIndex:0];
-    year.text = key;
+    NSArray* dateArr = [info objectForKey:@"date"];
+    NSString* dateStr = [NSString stringWithFormat:@"%@日 %@月 %@", [dateArr objectAtIndex:2], [dateArr objectAtIndex:1], [dateArr objectAtIndex:0]];
+    date.text = dateStr;
+
+    UIButton* more = (UIButton*)[superView viewWithTag:1203];
+    if (!more) {
+        more = [[UIButton alloc] init];
+        [superView addSubview:more];
+        [more setImage:[UIImage imageNamed:@"default_gift"] forState:UIControlStateNormal];
+        more.tag = 1203;
+        [more mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.offset(-10);
+            make.bottom.offset(-10);
+            make.size.sizeOffset(CGSizeMake(30, 25));
+        }];
+    }
+
+    UIButton* comment = (UIButton*)[superView viewWithTag:1204];
+    if (!comment) {
+        comment = [[UIButton alloc] init];
+        [superView addSubview:comment];
+        [comment setImage:[UIImage imageNamed:@"screen_public-voice"] forState:UIControlStateNormal];
+        comment.tag = 1204;
+        [comment setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+        [comment setTitleEdgeInsets:UIEdgeInsetsMake(0, -35, 0, 0)];
+        [[comment titleLabel] setFont:[UIFont systemFontOfSize:13]];
+        [comment setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [comment setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 35)];
+        [comment setBackgroundColor:[UIColor clearColor]];
+        [comment mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(more.mas_left).with.offset(-5);
+            make.bottom.offset(-10);
+            make.size.sizeOffset(CGSizeMake(60, 25));
+        }];
+    }
+    [comment setTitle:[NSString stringWithFormat:@"%@k+", [info objectForKey:@"comment"]] forState:UIControlStateNormal];
+
+    UIButton* favour = (UIButton*)[superView viewWithTag:1205];
+    if (!favour) {
+        favour = [[UIButton alloc] init];
+        [superView addSubview:favour];
+        [favour setImage:[UIImage imageNamed:@"screen_private voice"] forState:UIControlStateNormal];
+        favour.tag = 1205;
+        [favour setContentHorizontalAlignment:UIControlContentHorizontalAlignmentRight];
+        [favour setTitleEdgeInsets:UIEdgeInsetsMake(0, -35, 0, 0)];
+        [[favour titleLabel] setFont:[UIFont systemFontOfSize:13]];
+        [favour setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
+        [favour setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 35)];
+        [favour setBackgroundColor:[UIColor clearColor]];
+        [favour mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(comment.mas_left).with.offset(-5);
+            make.bottom.offset(-10);
+            make.size.sizeOffset(CGSizeMake(60, 25));
+        }];
+    }
+    [favour setTitle:[NSString stringWithFormat:@"%@k+", [info objectForKey:@"favour"]] forState:UIControlStateNormal];
+
+    CGFloat photoViewWidth = _MainScreen_Width-64-20;
+    UIView* photo = [superView viewWithTag:1206];
+    if (!photo) {
+        photo = [[UIView alloc] init];
+        [superView addSubview:photo];
+        photo.tag = 1206;
+        photo.userInteractionEnabled = YES;
+        photo.backgroundColor = [UIColor clearColor];
+        [photo mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(timeLine.mas_right).with.offset(6);
+            make.bottom.equalTo(favour.mas_top).with.offset(-5);
+            make.width.offset(photoViewWidth/3.0);
+            make.height.offset(photoViewWidth/3.0);
+        }];
+    }
+    CGFloat height = 0;
+    NSArray* photos = [info objectForKey:@"photo"];
+    int photoCnt = (int)[photos count];
+    if (photoCnt > 1) {
+        height = (photoViewWidth/3.0)*(photoCnt/3+(photoCnt%3>0?1:0));
+        [photo mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.height.offset(height);
+        }];
+    }
+    NSArray* subViews = [photo subviews];
+    for (UIView* subView in subViews) {
+        [subView removeFromSuperview];
+    }
+    for (int i=0; i<photoCnt; i++) {
+        UIImageView* photoItem = [[UIImageView alloc] init];
+        [photo addSubview:photoItem];
+        photoItem.backgroundColor = [UIColor clearColor];
+        photoItem.userInteractionEnabled = YES;
+        if (photoCnt > 1) {
+            int row = i/3;
+            int line = i%3;
+            [photoItem mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.offset((photoViewWidth/3.0+10)*line);
+                make.top.offset((photoViewWidth/3.0+10)*row);
+                make.width.offset(photoViewWidth/3.0);
+                make.height.offset(photoViewWidth/3.0);
+            }];
+            photoItem.contentMode = UIViewContentModeScaleToFill;
+        } else {
+            [photoItem mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.offset(0);
+                make.top.offset(0);
+                make.width.equalTo(photo);
+                make.height.equalTo(photo);
+            }];
+            photoItem.contentMode = UIViewContentModeScaleAspectFit;
+        }
+        NSString* photoUrl = [photos objectAtIndex:i];
+        [photoItem sd_setImageWithPreviousCachedImageWithURL:[NSURL URLWithString:photoUrl] andPlaceholderImage:[UIImage imageNamed:@"screen_private voice"] options:SDWebImageRetryFailed progress:^(NSInteger receivedSize, NSInteger expectedSize) {
+
+        } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+            
+        }];
+    }
+
+    UILabel* text = (UILabel*)[superView viewWithTag:1207];
+    if (!text) {
+        text = [[UILabel alloc] init];
+        [superView addSubview:text];
+        text.tag = 1207;
+        text.backgroundColor = [UIColor clearColor];
+        text.textColor = [UIColor blackColor];
+        text.font = [UIFont boldSystemFontOfSize:14.0];
+        text.textAlignment = NSTextAlignmentLeft;
+        text.lineBreakMode = NSLineBreakByWordWrapping;
+        text.numberOfLines = 0;
+        [text mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(timeLine.mas_right).with.offset(6);
+            make.top.equalTo(date.mas_bottom).with.offset(5);
+            make.right.offset(-10);
+            make.bottom.equalTo(photo.mas_top).with.offset(-5);
+        }];
+    }
+    text.text = [info objectForKey:@"text"];
 
 }
 

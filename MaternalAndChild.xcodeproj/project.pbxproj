@@ -10,6 +10,9 @@
 		2F8EC7881B564546007F8931 /* ADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EC7821B564546007F8931 /* ADView.m */; };
 		2F8EC7891B564546007F8931 /* ChildCareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EC7831B564546007F8931 /* ChildCareViewController.m */; };
 		2F8EC78A1B564546007F8931 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F8EC7841B564546007F8931 /* RecommendViewController.m */; };
+		2F8EC78E1B565482007F8931 /* default_gift.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F8EC78B1B565482007F8931 /* default_gift.png */; };
+		2F8EC78F1B565482007F8931 /* screen_private voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F8EC78C1B565482007F8931 /* screen_private voice.png */; };
+		2F8EC7901B565482007F8931 /* screen_public-voice.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F8EC78D1B565482007F8931 /* screen_public-voice.png */; };
 		2F9E08DC1B54B78300841964 /* line@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08DB1B54B78300841964 /* line@2x.png */; };
 		2F9E08DE1B54E31D00841964 /* time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E08DD1B54E31D00841964 /* time@2x.png */; };
 		2F9E08E21B54F84900841964 /* DateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E08E11B54F84900841964 /* DateViewController.m */; };
@@ -51,6 +54,9 @@
 		2F8EC7851B564546007F8931 /* ADView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ADView.h; path = DiscoverVC/RecommendView/ADView.h; sourceTree = "<group>"; };
 		2F8EC7861B564546007F8931 /* ChildCareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChildCareViewController.h; path = DiscoverVC/RecommendView/ChildCareViewController.h; sourceTree = "<group>"; };
 		2F8EC7871B564546007F8931 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RecommendViewController.h; path = DiscoverVC/RecommendView/RecommendViewController.h; sourceTree = "<group>"; };
+		2F8EC78B1B565482007F8931 /* default_gift.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = default_gift.png; path = Resource/Image/default_gift.png; sourceTree = "<group>"; };
+		2F8EC78C1B565482007F8931 /* screen_private voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screen_private voice.png"; path = "Resource/Image/screen_private voice.png"; sourceTree = "<group>"; };
+		2F8EC78D1B565482007F8931 /* screen_public-voice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "screen_public-voice.png"; path = "Resource/Image/screen_public-voice.png"; sourceTree = "<group>"; };
 		2F9E08DB1B54B78300841964 /* line@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "line@2x.png"; path = "Resource/Image/line@2x.png"; sourceTree = "<group>"; };
 		2F9E08DD1B54E31D00841964 /* time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "time@2x.png"; path = "Resource/Image/time@2x.png"; sourceTree = "<group>"; };
 		2F9E08E01B54F84900841964 /* DateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DateViewController.h; path = DiscoverVC/DateView/DateViewController.h; sourceTree = "<group>"; };
@@ -245,6 +251,9 @@
 		2FF2FDB41B5389A200200059 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				2F8EC78B1B565482007F8931 /* default_gift.png */,
+				2F8EC78C1B565482007F8931 /* screen_private voice.png */,
+				2F8EC78D1B565482007F8931 /* screen_public-voice.png */,
 				2F9E08E31B55009900841964 /* line2@2x.png */,
 				2F9E08E41B55009900841964 /* time2@2x.png */,
 				2F9E08DD1B54E31D00841964 /* time@2x.png */,
@@ -390,12 +399,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2FF2FD881B5381FB00200059 /* LaunchScreen.xib in Resources */,
+				2F8EC78E1B565482007F8931 /* default_gift.png in Resources */,
 				2F9E08E51B55009900841964 /* line2@2x.png in Resources */,
 				2F9E08DE1B54E31D00841964 /* time@2x.png in Resources */,
 				2F9E08E61B55009900841964 /* time2@2x.png in Resources */,
 				2FF2FD851B5381FB00200059 /* Images.xcassets in Resources */,
 				2F9E08DC1B54B78300841964 /* line@2x.png in Resources */,
+				2F8EC78F1B565482007F8931 /* screen_private voice.png in Resources */,
 				2FF2FDB61B5389AC00200059 /* icon_guanbi.png in Resources */,
+				2F8EC7901B565482007F8931 /* screen_public-voice.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
