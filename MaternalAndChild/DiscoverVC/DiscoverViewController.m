@@ -41,9 +41,10 @@
     [self initDateView];
     [self initTableView];
 
+    //@"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3042410010,1849246464&fm=116&gp=0.jpg", @"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862868179,785881333&fm=116&gp=0.jpg"
     data = @[@{@"date":@[@"2015", @"7", @"7"],
                  @"text":@"某剩女虔诚信奉上帝，上帝感动决定奖励她一个愿望。\n剩女说：我的愿望是成为高高在上滴女王，住在超级豪华滴复合式城堡，身边有美男围绕，手下有无数工人为我辛勤工作……\n上帝答应了。\n然后……\n剩女变成了一只女王……蜂！",
-               @"photo":@[@"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=3042410010,1849246464&fm=116&gp=0.jpg", @"https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=862868179,785881333&fm=116&gp=0.jpg"],
+               @"photo":@[],
                @"favour":@"77",
                @"comment":@"33"},
              @{@"date":@[@"2015", @"7", @"5"],
